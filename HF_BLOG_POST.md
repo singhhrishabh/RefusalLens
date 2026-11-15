@@ -9,6 +9,10 @@ tags:
   - ai-safety
   - red-teaming
   - interpretability
+  - lexsi-hackathon-2026
+  - curatorkit
+  - circuitkit
+  - safetune
 ---
 
 # 🔍 RefusalLens: Counterfactual Explanations for Why Language Models Refuse

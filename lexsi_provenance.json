@@ -1,0 +1,50 @@
+{
+  "schema": "lexsi.provenance/1",
+  "library": "refusallens",
+  "version": "0.1.0",
+  "created_at": "2026-11-15T21:50:00Z",
+  "base_model": "meta-llama/Llama-3.1-8B-Instruct",
+  "method": "counterfactual_boundary_audit",
+  "ecosystem_compatibility": {
+    "curatorkit": "exports DPO/KTO preference pairs for over-refusal mitigation",
+    "safetune": "audits post-finetuning safety drift margins (d >= 3 vs d = 1)",
+    "circuitkit": "provides minimal contrastive input pairs for causal activation patching",
+    "aligntune": "benchmarks multi-script cross-lingual alignment consistency",
+    "agenttune": "diagnoses argument-level false-positive safety triggers in tool calls"
+  },
+  "inputs": [
+    {
+      "kind": "dataset",
+      "ref": "data/benign_overrefusal.jsonl",
+      "description": "Benign prompts with sensitive surface cues causing false-positive refusals"
+    },
+    {
+      "kind": "dataset",
+      "ref": "data/abstracted_harm.jsonl",
+      "description": "Abstracted harm categories for boundary resistance evaluation"
+    },
+    {
+      "kind": "dataset",
+      "ref": "data/multilingual_prompts.jsonl",
+      "description": "Parallel multi-script prompts across EN, HI, TA, Hinglish, FR, ES"
+    }
+  ],
+  "params": {
+    "beam_width": 5,
+    "max_depth": 3,
+    "operators": [
+      "token_substitution",
+      "syntactic_paraphrase",
+      "contextual_framing"
+    ],
+    "languages": [
+      "en",
+      "hi",
+      "ta",
+      "hinglish",
+      "fr",
+      "es"
+    ],
+    "faithfulness_validation": "held_out_paraphrase_templates"
+  }
+}

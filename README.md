@@ -4,7 +4,8 @@
 
 ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)
 ![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-green)
-![Status: Alpha](https://img.shields.io/badge/status-alpha-orange)
+![Status: Hackathon Ready](https://img.shields.io/badge/hackathon-lexsi--2026-purple)
+![Provenance: lexsi.provenance/1](https://img.shields.io/badge/provenance-lexsi.provenance%2F1-blueviolet)
 
 RefusalLens is an explainability tool that treats an LLM refusal as a **decision boundary** and searches for the **minimal counterfactual edit** that flips it. For any prompt, RefusalLens finds the smallest change — a word substitution, a paraphrase, or a shift in framing — that turns a refusal into compliance, or the reverse.
 
